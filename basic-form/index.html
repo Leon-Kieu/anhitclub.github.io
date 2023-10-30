@@ -1,0 +1,427 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selenium WebDriver</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        able {
+            border-spacing: 1;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        table * {
+            position: relative;
+        }
+        
+        table td,
+        table th {
+            padding-left: 8px;
+        }
+        
+        table thead tr {
+            height: 60px;
+            background: #FFED86;
+            font-size: 16px;
+        }
+        
+        table tbody tr {
+            height: 48px;
+            border-bottom: 2px solid #384047;
+        }
+        
+        table tbody tr:last-child {
+            border: 1;
+        }
+        
+        table td,
+        table th {
+            text-align: left;
+        }
+        
+        table td.l,
+        table th.l {
+            text-align: right;
+        }
+        
+        table td.c,
+        table th.c {
+            text-align: center;
+        }
+        
+        table td.r,
+        table th.r {
+            text-align: center;
+        }
+        
+        .figure {
+            float: left;
+            padding-right: 20px;
+        }
+        
+        .figcaption {
+            display: none;
+        }
+        
+        .figure:hover .figcaption {
+            display: block;
+        }
+        
+        img {
+            width: 120px;
+            height: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Selenium WebDriver AnhIT Club</h1>
+
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">1</span>Your basic info</legend>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email">
+
+            <label for="password">Password:</label>
+            <input disabled="disabled" placeholder="Textbox is disabled" type="password" id="disable_password" name="disable_password">
+
+            <label for="password">Number:</label>
+            <input type="number" id="number" name="number">
+
+            <label>Age:</label>
+            <input type="radio" id="under_18" value="under_18" name="user_age">
+            <label for="under_18" class="light">Under 18</label>
+            <br>
+            <input type="radio" id="over_18" value="over_18" name="user_age">
+            <label for="over_18" class="light">18 or older</label>
+            <br>
+            <input disabled="disabled" type="radio" id="radio-disabled" value="radio-disabled" name="user_age">
+            <label for="radio-disabled" class="light">Radio button is disabled</label>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">2</span>Your profile</legend>
+            <label for="edu">Education:</label>
+            <textarea id="edu" name="user_edu"></textarea>
+            <label for="bio">Biography:</label>
+            <textarea disabled="disabled" placeholder="TextArea is disabled" id="bio" name="user_bio"></textarea>
+
+            <label for="job1">Job Role 01 - Single Dropdown:</label>
+            <select id="job1" name="user_job1">
+        <option value="automation">Automation Testing</option>
+        <option value="manual">Manual Testing</option>
+        <option value="website">Adhoc Testing</option>
+        <option value="mobile">Mobile Testing</option>
+        <option value="desktop">Desktop Testing</option>
+        <option value="security">Security Testing</option>
+        <option value="perfomance">Perfomance Testing</option>
+        <option value="intergration">Intergration Testing</option>
+        <option value="unit">Unit Testing</option>
+        <option value="function">Functional UI Testing</option>
+      </select>
+
+            <label for="job2">Job Role 02 - Multiple Dropdown:</label>
+            <select id="job2" name="user_job2" multiple="multiple">
+        <option value="automation">Automation</option>
+        <option value="manual">Manual</option>
+        <option value="website">Adhoc</option>
+        <option value="mobile">Mobile</option>
+        <option value="desktop">Desktop</option>
+        <option value="security">Security</option>
+        <option value="perfomance">Perfomance</option>
+        <option value="intergration">Intergration</option>
+        <option value="unit">Unit</option>
+        <option value="function">Functional UI</option>
+      </select>
+
+            <label for="job3">Job Role 03 - Disable Dropdown:</label>
+            <select disabled="disabled" id="job3" name="user_job3">
+        <option value="dropdown-disabled">Dropdown is disabled</option>
+      </select>
+
+            <label>Interests:</label>
+            <input type="checkbox" id="development" value="interest_development" name="user_interest">
+            <label class="light" for="development">Development</label>
+            <br>
+            <input type="checkbox" id="design" value="interest_design" name="user_interest">
+            <label class="light" for="design">Design</label>
+            <br>
+            <input disabled="disabled" type="checkbox" id="check-disbaled" value="check-disbaled" name="user_interest">
+            <label class="light" for="check-disbaled">Checkbox is disabled</label>
+            <br>
+            <br />
+            <label>Languagues:</label>
+            <input type="checkbox" id="java" value="java" name="java">
+            <label class="light" for="java">Java</label>
+            <br>
+            <input type="checkbox" id="c#" value="c#" name="c#">
+            <label class="light" for="c#">C#</label>
+            <br>
+            <input type="checkbox" id="javascript" value="javascript" name="javascript">
+            <label class="light" for="javascript">Javascript</label>
+            <br>
+            <input type="checkbox" id="python" value="python" name="python">
+            <label class="light" for="python">Python</label>
+            <br>
+            <input type="checkbox" id="ruby" value="ruby" name="ruby">
+            <label class="light" for="ruby">Ruby</label>
+            <br>
+            <input type="checkbox" id="php" value="php" name="php">
+            <label class="light" for="php">PHP</label>
+            <br>
+            <br />
+            <label for="slider-1">Slider 01:</label>
+            <input name="slider-1" id="slider-1" data-highlight="true" min="0" max="100" value="50" type="range">
+
+            <label for="slider-2">Slider 02 (Disabled):</label>
+            <input name="slider-2" id="slider-2" disabled="disabled" min="0" max="100" value="50" type="range">
+        </div>
+    </fieldset>
+    <fieldset>
+        <div class="container">
+            <button id="button-disabled" disabled="disabled">Button is disabled</button>
+            <br>
+            <button id="button-enabled" onclick="window.location.href='http://automationfc.com'">Button is enabled</button>
+            <br>
+            <button id="button-print" onclick="window.print()">Print this Page</button>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">3</span>Table</legend>
+            <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke" style="width:100%">
+                <thead>
+                    <tr>
+                        <th data-priority="1">Number</th>
+                        <th data-priority="2">Article title</th>
+                        <th data-priority="3">Date created</th>
+                        <th data-priority="4">Rating</th>
+                        <th data-priority="5">Reviews</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>
+                            <a href="https://automationfc.com/2015/12/13/java-webdriver-08-kiem-tra-phan-tu-ton-tai-tren-page/" data-rel="external">Element is display</a>
+                        </td>
+                        <td>2013</td>
+                        <td>100%</td>
+                        <td>74</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>
+                            <a href="https://automationfc.com/2015/12/13/java-webdriver-09-kiem-tra-phan-tu-bi-disable-enable/" data-rel="external">Element is disable</a>
+                        </td>
+                        <td>2014</td>
+                        <td>97%</td>
+                        <td>64</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>
+                            <a href="https://automationfc.com/2015/12/13/java-webdriver-10-kiem-tra-phan-tu-da-duoc-chon/" data-rel="external">Element
+                is select</a>
+                        </td>
+                        <td>2015</td>
+                        <td>97%</td>
+                        <td>87</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">4</span>Window</legend>
+            <label for="open window">Opening a new window:</label>
+            <a href='https://google.com.vn' , target='_blank'>GOOGLE</a>
+            </br>
+            <a href='https://facebook.com' , target='_blank'>FACEBOOK</a>
+            </br>
+            <a href='https://tiki.vn' , target='_blank'>TIKI</a>
+            </br>
+            <a href='https://lazada.vn' , target='_blank'>LAZADA</a>
+            </br>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">5</span>File</legend>
+            <label for="download file">Download file:</label>
+            <a href="http://the-internet.herokuapp.com/download/some-file.txt">download.txt</a>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">6</span>Hover</legend>
+            <label for="hover">Hover over the image for additional information</label>
+            <div class="figure">
+                <img src="/basic-form/image/01.jfif" alt="User Avatar 01">
+                <div class="figcaption">
+                    <h5>Name: User1</h5>
+                    <a href="http://daominhdam.github.io">View profile</a>
+                </div>
+            </div>
+
+            <div class="figure">
+                <img src="/basic-form/image/02.jfif" alt="User Avatar 02">
+                <div class="figcaption">
+                    <h5>Name: User2</h5>
+                    <a href="http://daominhdam.github.io">View profile</a>
+                </div>
+            </div>
+
+            <div class="figure">
+                <img src="/basic-form/image/03.jfif" alt="User Avatar 03">
+                <div class="figcaption">
+                    <h5>Name: User3</h5>
+                    <a href="http://daominhdam.github.io">View profile</a>
+                </div>
+            </div>
+
+            <div class="figure">
+                <img src="/basic-form/image/04.jfif" alt="User Avatar 04">
+                <div class="figcaption">
+                    <h5>Name: User4</h5>
+                    <a href="http://daominhdam.github.io">View profile</a>
+                </div>
+            </div>
+
+            <div class="figure">
+                <img src="/basic-form/image/05.png" alt="User Avatar 05">
+                <div class="figcaption">
+                    <h5>Name: User5</h5>
+                    <a href="http://daominhdam.github.io">View profile</a>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">7</span>Broken Images</legend>
+            <img src="asdf.jpg" alt="broken_01" />
+            <img src="hjkl.jpg" alt="broken_02" />
+            <img src="gkjh.jpg" alt="broken_03" />
+            <img src="fjdg.jpg" alt="broken_04" />
+            <img src="/basic-form/image/06.jfif" alt="broken_05" />
+        </div>
+    </fieldset>
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">8</span>Tooltips</legend>
+            <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+    </fieldset>
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">9</span>Double Click</legend>
+            <button ondblclick="doubleClickMe()">Double click me</button>
+            <p id="demo"></p>
+            <script>
+                function doubleClickMe() {
+                    document.getElementById("demo").innerHTML = "Hello Automation Guys!";
+                }
+            </script>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">10</span>JavaScript Alerts</legend>
+            <div id="content" class="large-12 columns">
+                <script>
+                    function jsAlert() {
+                        alert('I am a JS Alert');
+                        log('You clicked an alert successfully ');
+                    }
+
+                    function jsConfirm() {
+                        var c = confirm('I am a JS Confirm');
+                        var result = c === true ? 'Ok' : 'Cancel';
+                        log('You clicked: ' + result);
+                    }
+
+                    function jsPrompt() {
+                        var p = prompt('I am a JS prompt');
+                        log('You entered: ' + p);
+                    }
+
+                    $(document).tooltip();
+
+                    function log(msg) {
+                        var result = document.getElementById('result');
+                        result.innerHTML = msg;
+                    }
+                </script>
+                <div class='example'>
+                    <button onclick="jsAlert()">Click for JS Alert</button>
+                    <button onclick="jsConfirm()">Click for JS Confirm</button>
+                    <button onclick="jsPrompt()">Click for JS Prompt</button>
+                    <h4>Result:</h4>
+                    <p id='result' style='color:green'></p>
+                </div>
+            </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="container">
+            <legend>
+                <span class="number">11</span>Submit and Reset form</legend>
+            <div id="content" class="large-12 columns">
+
+                <form method="get" id="login-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address"></textarea>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"><br><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+                    <button type="submit" value="Submit">Submit</button>
+                    <button type="reset" value="Reset">Reset</button>
+                </form>
+            </div>
+    </fieldset>
+
+    <div id='page-footer' class="row">
+        <div class="large-4 large-centered columns">
+            <hr>
+            <div style="text-align: center;">Copyright by <a target="_blank" href="http://automationfc.com/">Dam Dao -
+          AutomationFC</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
